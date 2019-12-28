@@ -35,14 +35,17 @@ class Start extends Component {
           lon: position.coords.longitude,
           lat: position.coords.latitude,
         });
+        this.getWeather();
       },
       () => {
         Alert.alert('No momento não foi possível atualizar a sua posição.');
       },
       {timeout: 3000, enableHighAccuracy: true, maximumAge: 3000},
     );
+  }
 
-    api
+  async getWeather() {
+    await api
       .get(
         'weather?lat=' +
           this.state.lat +

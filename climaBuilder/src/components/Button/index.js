@@ -3,7 +3,6 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 class Button extends Component {
   render() {
-    const height = this.props;
     return (
       <View style={styles.containerButton}>
         <TouchableOpacity
@@ -20,6 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
+    marginTop: 30,
   },
   button: {
     backgroundColor: '#fed800',

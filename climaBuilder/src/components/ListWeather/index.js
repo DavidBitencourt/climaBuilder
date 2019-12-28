@@ -60,7 +60,6 @@ class ListWeather extends Component {
 }
 const styles = StyleSheet.create({
   infoContainer: {
-    height: '60%',
     padding: 5,
     textAlign: 'left',
     marginLeft: 10,
@@ -71,13 +70,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     flexDirection: 'row',
     padding: 15,
-  },
-  textInfo: {
-    flex: 1,
-    color: '#222',
-    fontSize: 17,
-    fontWeight: '700',
-    alignSelf: 'flex-start',
   },
   textOrange: {
     color: '#fed800',
