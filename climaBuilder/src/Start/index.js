@@ -1,6 +1,7 @@
 import Geolocation from '@react-native-community/geolocation';
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import Button from '../components/Button';
 class Start extends Component {
   constructor(props) {
     super(props);
@@ -8,8 +9,11 @@ class Start extends Component {
       lon: '',
       lat: '',
     };
+
+    this.getPosition();
   }
-  componentWillMount() {
+
+  getPosition() {
     Geolocation.getCurrentPosition(position => {
       this.setState({
         lon: position.coords.longitude,
@@ -33,11 +37,10 @@ class Start extends Component {
           <Text style={styles.textOrange}>Clima </Text>
           <Text style={styles.textBlack}>Builder</Text>
         </View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.consultClimate()}>
-          <Text style={styles.textButton}>consultar o clima</Text>
-        </TouchableOpacity>
+        <Button
+          handler={() => this.consultClimate()}
+          text={'consultar clima'}
+        />
       </View>
     );
   }
@@ -58,6 +61,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 30,
   },
   textOrange: {
     color: '#fed800',
@@ -68,17 +72,6 @@ const styles = StyleSheet.create({
     color: '#222',
     fontSize: 45,
     fontWeight: 'bold',
-  },
-  button: {
-    backgroundColor: '#222',
-    borderRadius: 15,
-    padding: 8,
-    marginTop: 25,
-  },
-  textButton: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    fontWeight: '900',
   },
 });
 
