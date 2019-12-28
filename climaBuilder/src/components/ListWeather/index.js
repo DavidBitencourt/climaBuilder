@@ -19,7 +19,7 @@ class ListWeather extends Component {
         <View style={styles.info}>
           <Text style={styles.textBlack}>Localização: </Text>
           <Text style={styles.textOrange}>
-            {country}, {city}
+            {country && country + ','} {city}
           </Text>
         </View>
         <View style={styles.info}>
@@ -28,31 +28,39 @@ class ListWeather extends Component {
         </View>
         <View style={styles.info}>
           <Text style={styles.textBlack}>Temperatura: </Text>
-          <Text style={styles.textOrange}>{parseInt(temp - 273.15)}°C</Text>
+          <Text style={styles.textOrange}>
+            {temp && parseInt(temp - 273.15) + '°C'}
+          </Text>
         </View>
         <View style={styles.info}>
           <Text style={styles.textBlack}>Mínima: </Text>
-          <Text style={styles.textOrange}>{parseInt(min - 273.15)}°C</Text>
+          <Text style={styles.textOrange}>
+            {min && parseInt(min - 273.15) + '°C'}
+          </Text>
         </View>
         <View style={styles.info}>
           <Text style={styles.textBlack}>Máxima: </Text>
-          <Text style={styles.textOrange}>{parseInt(max - 273.15)}°C</Text>
+          <Text style={styles.textOrange}>
+            {max && parseInt(max - 273.15 + '°C')}
+          </Text>
         </View>
         <View style={styles.info}>
           <Text style={styles.textBlack}>Humidade: </Text>
-          <Text style={styles.textOrange}>{humidity}%</Text>
+          <Text style={styles.textOrange}>{humidity && humidity + '%'}</Text>
         </View>
         <View style={styles.info}>
           <Text style={styles.textBlack}>Nublado: </Text>
-          <Text style={styles.textOrange}>{clouds}%</Text>
+          <Text style={styles.textOrange}>{clouds && clouds + '%'}</Text>
         </View>
         <View style={styles.info}>
           <Text style={styles.textBlack}>Velocidade do vento: </Text>
-          <Text style={styles.textOrange}>{windSpeed} km</Text>
+          <Text style={styles.textOrange}>
+            {windSpeed && windSpeed + ' km'}
+          </Text>
         </View>
         <View style={styles.info}>
           <Text style={styles.textBlack}>Pressão: </Text>
-          <Text style={styles.textOrange}>{pressure} hPa</Text>
+          <Text style={styles.textOrange}>{pressure && pressure + ' hPa'}</Text>
         </View>
       </View>
     );
