@@ -37,7 +37,7 @@ class Start extends Component {
         });
       },
       () => {
-        Alert.alert('No momento não foi possível atualizar a sua posiçã0.');
+        Alert.alert('No momento não foi possível atualizar a sua posição.');
       },
       {timeout: 3000, enableHighAccuracy: true, maximumAge: 3000},
     );
@@ -63,6 +63,7 @@ class Start extends Component {
           windSpeed: response.data.wind.speed,
           clouds: response.data.clouds.all,
         });
+        Alert.alert('Busca de dados realizados com sucesso!');
       })
       .catch(err => {
         Alert.alert('Ocorreu um erro inesperado, tente novamente mais tarde.');
